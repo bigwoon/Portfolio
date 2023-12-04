@@ -1,0 +1,113 @@
+#include <iostream>
+#include <string>
+#include "read_words.h"
+
+using namespace std;
+
+// You may optionally implement and use this helper method.
+//string letterColor(int curIndex, char letter, string answer) {
+    ///////////////////////
+    // Student code here //
+ 
+ 
+
+    // Print the result
+   
+    // End student code  //
+    ///////////////////////
+//}
+
+// You may optionally implement and use this helper method.
+void printGuessColors(string guess, string answer) {
+    ///////////////////////
+    // Student code here //
+
+    // End student code  //
+    ///////////////////////
+}
+
+
+
+
+int index = 0;
+
+
+int main(int argc, char *argv[]) {
+    // Gets a random word from a file.
+  string answer = GetRandomWord(argc, argv);
+
+   string guess;
+  // cout << "Enter a 5 letter guess?" << endl;
+   //getline(cin,guess);
+  
+
+  
+   int numGuesses = 0;
+// Keep playing the game while…
+   while (numGuesses < 6 && guess != answer) {
+   //string guess;
+   cout << "Enter a 5 letter guess?" << endl;
+   
+   
+   cin >> guess;// Get the guess from the user
+   //int index = 0;
+   
+  
+
+
+   // Compare the guess to the answer - Section 4
+
+   char letter;
+   index = 0;
+   while (index != 5) {
+
+   //cout << "Enter a 5 letter guess?" << endl;
+   //cin >> guess;//getline(cin,guess); 
+  
+
+
+         letter = guess.at(index);
+
+         if (guess.at(index) == answer.at(index)) {
+                  //print if first letter is green or not.
+              cout << guess.at(index) << " - Green" << endl;
+         } else if (guess.at(index) != answer.at(0) && guess.at(index) != answer.at(1) && guess.at(index) 
+                    != answer.at(2) && guess.at(index) != answer.at(3) && guess.at(index) != answer.at(4)) {
+              // Print <first letter> - Red
+              cout << guess.at(index) << " - Red"<< endl;
+         } else {
+              // Print <first letter> - Yellow
+              cout << guess.at(index) << " - Yellow"<< endl;
+         }
+  
+         index++;
+         // Green, yellow, red?
+     
+     
+     
+   
+   }   
+   
+
+    numGuesses++;
+}
+
+
+if (numGuesses < 6)  {
+    cout << "You Won! That took " << numGuesses<<" guess(es)."<< endl;
+} else {
+    cout << "You lost. The answer was "<< answer << "." << endl;
+     
+}
+
+//numGuesses++;
+
+
+  
+    return 0;
+}
+
+    
+    // End student code  //
+    ///////////////////////
+    
